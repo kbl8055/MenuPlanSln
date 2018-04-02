@@ -1,0 +1,26 @@
+﻿<div>
+    <h1>Below is my veggie list:</h1>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Unit of Measure</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="veg in veggies">
+                    <td>{{veg.name}}</td>
+                    <td>{{veg.description}}</td>
+                    <td>{{veg.price | currency}}</td>
+                    <td>per {{veg.unitOfMeasure}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <button class="btn btn-warning" ng-click="goToMarket()">Back to Market</button>
+    </div>
+</div>
