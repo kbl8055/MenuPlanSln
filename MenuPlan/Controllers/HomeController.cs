@@ -10,7 +10,7 @@ namespace MenuPlan.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "MenuPlan KenApp";
+            ViewBag.Title = "MenuPlan KenApp1";
 
             return View();
         }
