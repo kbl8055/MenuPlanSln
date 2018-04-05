@@ -10,33 +10,47 @@
     systemx.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
         function ($stateProvider, $locationProvider, $urlRouterProvider) {
             //$locationProvider.html5Mode(true);
-            $urlRouterProvider.otherwise('/home');
+            $urlRouterProvider.otherwise('/market');
 
-            $stateProvider
-                .state('home', {
-                    url: '/home',
-                    views: {
-                        "main": {
-                            controller: 'homeCtrl',
-                            templateUrl: 'Scripts/app/home/home.tpl.html',
-                        }
-                    }
-                });
-            $stateProvider
-                .state('market', {
-                url: '/market',
-                views: {
-                    "main": {
-                        controller: 'marketCtrl',
-                        templateUrl: 'Scripts/app/market/market.tpl.html',
-                    }
-                }
-            });
-    }]);
+            //$stateProvider
+            //    .state('home', {
+            //        url: '/home',
+            //        views: {
+            //            "main": {
+            //                controller: 'homeCtrl',
+            //                templateUrl: 'Scripts/app/home/home.tpl.html',
+            //            }
+            //        }
+            //    });
+            //$stateProvider
+            //    .state('market', {
+            //    url: '/market',
+            //    views: {
+            //        "main": {
+            //            controller: 'marketCtrl',
+            //            templateUrl: 'Scripts/app/market/market.tpl.html',
+            //        }
+            //    }
+            //});
+        }]);
 
     systemx.controller('AppController', ['$scope', '$state', function ($scope, $state) {
-        $scope.goToHome = function () {
-            $state.go('home');
+        $scope.navigationLinks = {
+            goToHome: function () {
+                $state.go('home');
+            },
+            goToMarket: function () {
+                $state.go('market');
+            },
+            removeIngredient: function () {
+                $state.go('marketRemove');
+            },
+            addIngredient: function () {
+                $state.go('marketAdd');
+            },
+            updateIngredient: function () {
+                $state.go('marketUpdate');
+            }
         };
     }]);
 })();

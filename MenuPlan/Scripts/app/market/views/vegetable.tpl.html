@@ -1,8 +1,8 @@
-﻿<div>
+﻿<div class="temp big">
     <h1>Below is my veggie list:</h1>
 
     <div>
-        <table>
+        <table class="table-bordered">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -15,12 +15,12 @@
                 <tr ng-repeat="veg in veggies">
                     <td>{{veg.name}}</td>
                     <td>{{veg.description}}</td>
-                    <td>{{veg.price | currency}}</td>
+                    <td class="text-right">{{veg.price | currency}}</td>
                     <td>per {{veg.unitOfMeasure}}</td>
                 </tr>
             </tbody>
         </table>
         <br />
-        <button class="btn btn-warning" ng-click="goToMarket()">Back to Market</button>
+        <button class="btn btn-warning" ng-click="navigationLinks.goToMarket()">Back to Market</button>
     </div>
 </div>

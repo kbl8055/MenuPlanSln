@@ -279,7 +279,7 @@ nav a:hover::before {
   position: relative;
   width: 70%;
   height: 80%;
-  left: 30%;
+  left: 25%;
   top: 10%;
   bottom: 10%;
   background: rgba(0, 0, 0, 0.5);
@@ -295,7 +295,8 @@ nav a:hover::before {
 }
 
 .slides .slide:nth-child(1) {
-    background-image: url('img/Kali2.jpg');
+    /*background-image: url('img/Kali2.jpg');*/
+    /*background-image: url('img/first_bg.jpg');*/
 }
 .slides .slide:nth-child(2) {
     background-image: url(~/Content/theme/img/second_bg.jpg);
@@ -321,9 +322,13 @@ nav a:hover::before {
 
 
 .first-content {
-	padding: 100px;
+	/*padding: 100px;*/
+    /*padding-left: 100px;*/
+    padding: 40px;
 	text-align: left;
-	padding-top: 13%;
+	/*padding-top: 13%;*/
+    /*padding-top: 40px;*/
+    padding-top: 5%;
 }
 
 .first-content .author-image img {
@@ -725,7 +730,7 @@ nav a:hover::before {
 
 	.first-content {
 		text-align: center;
-		padding: 50px;
+		/*padding: 50px;*/
 	}
 
 	.first-content .author-image img {

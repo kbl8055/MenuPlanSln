@@ -1,0 +1,25 @@
+﻿body {
+
+}
+
+a[ui-sref] {
+    color: burlywood;
+    font-size: medium;
+}
+
+div .temp {
+    color: white;
+    font-weight: bold;
+}
+
+div .small {
+    font-size: 10px;
+}
+
+div .medium {
+    font-size: 12px;
+}
+
+div .big {
+    font-size: 14px;
+}

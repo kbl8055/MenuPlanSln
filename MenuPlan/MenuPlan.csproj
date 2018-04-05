@@ -159,6 +159,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Temp.css" />
     <Content Include="Content\theme\bootstrap-theme.css" />
     <Content Include="Content\theme\bootstrap-theme.min.css" />
     <Content Include="Content\theme\fontAwesome.css" />
@@ -204,6 +205,9 @@
     <Content Include="Scripts\app\home\home.tpl.html" />
     <Content Include="Scripts\app\market\market.js" />
     <Content Include="Scripts\app\market\market.tpl.html" />
+    <Content Include="Scripts\app\market\marketAdd.tpl.html" />
+    <Content Include="Scripts\app\market\marketRemove.tpl.html" />
+    <Content Include="Scripts\app\market\marketUpdate.tpl.html" />
     <Content Include="Scripts\app\market\views\vegetable.tpl.html" />
     <Content Include="Scripts\default\bootstrap.js" />
     <Content Include="Scripts\default\bootstrap.min.js" />
