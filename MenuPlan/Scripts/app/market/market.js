@@ -53,22 +53,31 @@
                 });
         }]);
 
-    market.controller('marketCtrl', ['$scope', '$state',
-        function ($scope, $state) {
+    market.controller('marketCtrl', ['$http', '$log', '$scope', '$state',
+        function ($http, $log, $scope, $state) {
             $scope.message = 'Welcome to my market landing port.';
-            $scope.veggies = [
-                { name: 'Garlic', description: 'test', price: '85', unitOfMeasure: 'Kg' },
-                { name: 'Laurel', description: 'A bay leaf used for seasoning in cooking', price: '100', unitOfMeasure: 'Kg' },
-                { name: 'Black Ground Pepper', description: 'test', price: '80', unitOfMeasure: 'Kg' }
-            ];
+            //$scope.veggies = [
+            //    { name: 'Garlic', description: 'test', price: '85', unitOfMeasure: 'Kg' },
+            //    { name: 'Laurel', description: 'A bay leaf used for seasoning in cooking', price: '100', unitOfMeasure: 'Kg' },
+            //    { name: 'Black Ground Pepper', description: 'test', price: '80', unitOfMeasure: 'Kg' }
+            //];
 
-            //$scope.veggies = function()
-
-            //$scope.ingredient = { name: '', description: '', price: '', unitOfMeasure: '' };
+            $scope.getIngredients = function () {
+                return $http.get('/api/Ingredient/GetAll/')
+                    .success(function (response) {
+                        $log.log(response);
+                        $scope.veggies = response;
+                    })
+                    .error(function (data) {
+                        $scope.errorMessage = $log.log(data);
+                    });
+            }; 
 
             ////$scope.addIngredient = function () {
 
             ////}
+            //$scope.getIngredients();
+            $scope.getIngredients();
         }
     ]);
 })();
