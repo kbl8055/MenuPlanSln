@@ -11,7 +11,7 @@
                     views: {
                         "main": {
                             controller: 'marketCtrl',
-                            templateUrl: 'Scripts/app/market/market.tpl.html',
+                            templateUrl: 'Scripts/app/market/views/market.tpl.html',
                         }
                     }
                 })
@@ -29,7 +29,7 @@
                     views: {
                         "main": {
                             controller: 'marketCtrl',
-                            templateUrl: 'Scripts/app/market/marketAdd.tpl.html',
+                            templateUrl: 'Scripts/app/market/views/marketAdd.tpl.html',
                         }
                     }
                 })
@@ -38,7 +38,7 @@
                     views: {
                         "main": {
                             controller: 'marketCtrl',
-                            templateUrl: 'Scripts/app/market/marketRemove.tpl.html',
+                            templateUrl: 'Scripts/app/market/views/marketRemove.tpl.html',
                         }
                     }
                 })
@@ -47,7 +47,7 @@
                     views: {
                         "main": {
                             controller: 'marketCtrl',
-                            templateUrl: 'Scripts/app/market/marketUpdate.tpl.html',
+                            templateUrl: 'Scripts/app/market/views/marketUpdate.tpl.html',
                         }
                     }
                 });
@@ -55,29 +55,23 @@
 
     market.controller('marketCtrl', ['$http', '$log', '$scope', '$state',
         function ($http, $log, $scope, $state) {
-            $scope.message = 'Welcome to my market landing port.';
-            //$scope.veggies = [
-            //    { name: 'Garlic', description: 'test', price: '85', unitOfMeasure: 'Kg' },
-            //    { name: 'Laurel', description: 'A bay leaf used for seasoning in cooking', price: '100', unitOfMeasure: 'Kg' },
-            //    { name: 'Black Ground Pepper', description: 'test', price: '80', unitOfMeasure: 'Kg' }
-            //];
-
             $scope.getIngredients = function () {
                 return $http.get('/api/Ingredient/GetAll/')
-                    .success(function (response) {
-                        $log.log(response);
-                        $scope.veggies = response;
+                    .success(function (data) {
+                        $scope.veggies = data;
                     })
                     .error(function (data) {
                         $scope.errorMessage = $log.log(data);
                     });
-            }; 
+            };
 
-            ////$scope.addIngredient = function () {
+            $scope.addIngredient = function () {
+                return $http.post('/api/Ingredient/Add/')
+            }
 
-            ////}
-            //$scope.getIngredients();
-            $scope.getIngredients();
+            var init = function () {
+                $scope.getIngredients();
+            }
         }
     ]);
 })();

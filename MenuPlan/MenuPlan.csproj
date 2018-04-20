@@ -204,12 +204,12 @@
     <Content Include="Scripts\angjslib\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\home\home.js" />
-    <Content Include="Scripts\app\home\home.tpl.html" />
+    <Content Include="Scripts\app\home\views\home.tpl.html" />
     <Content Include="Scripts\app\market\market.js" />
-    <Content Include="Scripts\app\market\market.tpl.html" />
-    <Content Include="Scripts\app\market\marketAdd.tpl.html" />
-    <Content Include="Scripts\app\market\marketRemove.tpl.html" />
-    <Content Include="Scripts\app\market\marketUpdate.tpl.html" />
+    <Content Include="Scripts\app\market\views\market.tpl.html" />
+    <Content Include="Scripts\app\market\views\marketAdd.tpl.html" />
+    <Content Include="Scripts\app\market\views\marketRemove.tpl.html" />
+    <Content Include="Scripts\app\market\views\marketUpdate.tpl.html" />
     <Content Include="Scripts\app\market\views\vegetable.tpl.html" />
     <Content Include="Scripts\default\bootstrap.js" />
     <Content Include="Scripts\default\bootstrap.min.js" />
@@ -252,7 +252,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\app\common\filters\" />
     <Folder Include="Scripts\app\common\services\" />
+    <Folder Include="Scripts\app\market\controllers\" />
+    <Folder Include="Scripts\app\market\directives\" />
+    <Folder Include="Scripts\app\market\factories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -27,7 +27,9 @@ namespace MenuPlan.Controllers
             return "value";
         }
 
+        // TODO: Complete this request - not working on front-end files?
         // POST api/<controller>
+        [Route("api/Ingredient/Add/")]
         public void Post([FromBody]string value)
         {
         }
