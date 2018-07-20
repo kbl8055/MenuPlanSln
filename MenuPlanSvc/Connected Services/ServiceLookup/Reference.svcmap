@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8c2c912f-bd11-4adf-af7e-28cd7805583b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:62925/Service/ServiceLookup.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceLookup.xsd" MetadataType="Schema" ID="7625d34f-c84e-4bf6-9f51-c6992b9e11cc" SourceId="1" SourceUrl="http://localhost:62925/Service/ServiceLookup.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceLookup1.xsd" MetadataType="Schema" ID="d967d3ce-21cc-487e-b61b-a5fa4e67c028" SourceId="1" SourceUrl="http://localhost:62925/Service/ServiceLookup.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceLookup2.xsd" MetadataType="Schema" ID="21876a67-597a-4484-9c5f-7acac8429927" SourceId="1" SourceUrl="http://localhost:62925/Service/ServiceLookup.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceLookup.wsdl" MetadataType="Wsdl" ID="98d65fa8-2c3d-434d-bcf0-8f83f1a6e3a5" SourceId="1" SourceUrl="http://localhost:62925/Service/ServiceLookup.svc?wsdl" />
+    <MetadataFile FileName="ServiceLookup.disco" MetadataType="Disco" ID="5985be3e-c368-4a61-a812-38d074f73a79" SourceId="1" SourceUrl="http://localhost:62925/Service/ServiceLookup.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

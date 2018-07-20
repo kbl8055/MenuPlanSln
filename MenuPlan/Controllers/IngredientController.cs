@@ -21,6 +21,15 @@ namespace MenuPlan.Controllers
             return result;
         }
 
+        //[Route("api/Ingredient/Categories/")]
+        //public Category[] GetCategories()
+        //{
+        //    var client = new ServiceIngredientClient();
+        //    var result = client.GetCategories();
+
+        //    return result;
+        //}
+
         // GET api/<controller>/5
         public string Get(int id)
         {
@@ -30,8 +39,12 @@ namespace MenuPlan.Controllers
         // TODO: Complete this request - not working on front-end files?
         // POST api/<controller>
         [Route("api/Ingredient/Add/")]
-        public void Post([FromBody]string value)
+        public string Post(Ingredient formInput)
         {
+            var client = new ServiceIngredientClient();
+            client.AddIngredient(formInput);
+
+            return "Add ingredient successful.";
         }
 
         // PUT api/<controller>/5

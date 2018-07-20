@@ -19,10 +19,17 @@
         </div>
         <br />
         <div class="form-group">
-            <label>Test Additional:</label>
-            <input type="text" name="unitOfMeasure" placeholder="Unit of Measure" class="form-control" ng-model="ingredient.unitOfMeasure" required />
+            <label>Category:</label>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{selectedCategory}}<span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation" ng-repeat="cat in categories"><a role="menuitem" ng-click="setCategory(cat)">{{cat.Name}}</a></li>
+                </ul>
+            </div>
+            <!--<input type="text" name="unitOfMeasure" placeholder="Unit of Measure" class="form-control" ng-model="ingredient.unitOfMeasure" required />-->
         </div>
         <br />
         <button class="btn btn-warning" ng-click="navigationLinks.goToMarket()">Back to Market</button>
+        <button class="btn btn-primary" ng-click="addIngredient()">Add</button>
     </form>
 </div>
