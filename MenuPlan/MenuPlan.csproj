@@ -205,7 +205,9 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\common\common.js" />
     <Content Include="Scripts\app\common\services\ingredientService.js" />
+    <Content Include="Scripts\app\market\controllers\addIngredientCtrl.js" />
     <Content Include="Scripts\app\market\controllers\marketCtrl.js" />
+    <Content Include="Scripts\app\market\controllers\veggieCtrl.js" />
     <Content Include="Scripts\app\market\market.js" />
     <Content Include="Scripts\app\market\views\market.tpl.html" />
     <Content Include="Scripts\app\market\views\marketAdd.tpl.html" />

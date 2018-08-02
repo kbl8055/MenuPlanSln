@@ -3,9 +3,9 @@
 
     var market = angular.module("systemx.market");
 
-    market.controller('marketCtrl', ['$http', '$log', '$scope', '$state', 'ingredientService', 'veggieList',
-        function ($http, $log, $scope, $state, ingredientService, veggieList) {
-            $scope.ingredient = { name: '', description: '', price: '', unitOfMeasure: '' };
+    market.controller('marketCtrl', 
+        function () {
+            //$scope.ingredient = { name: '', description: '', price: '', unitOfMeasure: '' };
 
             //let init = function () {
             //    $scope.getIngredients();
@@ -13,9 +13,9 @@
             //    $scope.selectedCategory = 'Select Category';
             //}
 
-            console.log(veggieList);
+            //console.log(veggieList);
             //$scope.name = veggieList;
-            $scope.veggies = veggieList.data;
+            //$scope.veggies = veggieList.data;
 
             //$http.get('/api/Ingredient/GetAll/').success(function (response) {
             //    console.log(response);
@@ -71,5 +71,5 @@
 
             //init();
         }
-    ]);
+    );
 })();
