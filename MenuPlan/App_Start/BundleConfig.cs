@@ -29,7 +29,13 @@ namespace MenuPlan
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angjslib/angular.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory("~/Scripts/app", "*.js", true));
+            //bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory("~/Scripts/app", "*.js", true));
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                        "~/Scripts/app/app.js",
+                        "~/Scripts/app/market/market.js",
+                        "~/Scripts/app/market/controllers/marketCtrl.js",
+                        "~/Scripts/app/common/services/ingredientService.js"
+                ));
         }
     }
 }
