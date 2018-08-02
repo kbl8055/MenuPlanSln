@@ -33,9 +33,10 @@ namespace MenuPlan
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                         "~/Scripts/app/app.js",
                         "~/Scripts/app/market/market.js",
-                        "~/Scripts/app/market/controllers/marketCtrl.js",
                         "~/Scripts/app/common/services/ingredientService.js"
                 ));
+
+            bundles.Add(new ScriptBundle("~/bundles/controllers").IncludeDirectory("~/Scripts/app", "*Ctrl.js", true));
         }
     }
 }
