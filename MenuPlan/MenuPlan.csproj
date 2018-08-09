@@ -204,7 +204,7 @@
     <Content Include="Scripts\angjslib\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\common\common.js" />
-    <Content Include="Scripts\app\common\services\ingredientService.js" />
+    <Content Include="Scripts\app\common\factories\ingredientService.js" />
     <Content Include="Scripts\app\market\controllers\addIngredientCtrl.js" />
     <Content Include="Scripts\app\market\controllers\marketCtrl.js" />
     <Content Include="Scripts\app\market\controllers\veggieCtrl.js" />
@@ -256,6 +256,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\app\common\filters\" />
+    <Folder Include="Scripts\app\common\services\" />
     <Folder Include="Scripts\app\home\views\" />
     <Folder Include="Scripts\app\market\directives\" />
     <Folder Include="Scripts\app\market\factories\" />

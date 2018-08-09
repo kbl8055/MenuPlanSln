@@ -31,12 +31,13 @@ namespace MenuPlan
 
             //bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory("~/Scripts/app", "*.js", true));
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                        "~/Scripts/app/app.js",
-                        "~/Scripts/app/market/market.js",
-                        "~/Scripts/app/common/services/ingredientService.js"
+                        "~/Scripts/app/app.js"
+                        ,"~/Scripts/app/market/market.js"
+                        , "~/Scripts/app/common/factories/ingredientService.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/controllers").IncludeDirectory("~/Scripts/app", "*Ctrl.js", true));
+            //bundles.Add(new ScriptBundle("~/bundles/factories").IncludeDirectory("~/Scripts/app", "*Factory.js", true));
         }
     }
 }
