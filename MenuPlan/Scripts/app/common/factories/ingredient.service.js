@@ -1,8 +1,9 @@
-﻿'use strict';
+﻿(function () {
+    'use strict';
 
-var market = angular.module('systemx.market');
+    var market = angular.module('systemx.market');
 
-market.factory('ingredientService', ['$http','$q', function ($http,$q) {
+    market.factory('ingredientService', ['$http', '$q', function ($http, $q) {
         return {
             //getAll: function ($http) {
             //        $http.get('/api/Ingredient/GetAll/').success(function (response) {
@@ -14,25 +15,25 @@ market.factory('ingredientService', ['$http','$q', function ($http,$q) {
             //},
             getAll: function () {
                 return $q.when(
-                        $http.get('/api/Ingredient/GetAll/').success(function (response) {
+                    $http.get('/api/Ingredient/GetAll/').success(function (response) {
                         return response;
                     })
                 );
             }
         };
     }
-    //function ($http, $q) {
-    //    this.getAll = function () {
-    //        var deferred = $q.defer();
+        //function ($http, $q) {
+        //    this.getAll = function () {
+        //        var deferred = $q.defer();
 
-    //        $http.get('/api/Ingredient/GetAll/').success(function (response) {
-    //            console.log(response);
-    //            deferred.resolve(response);
-    //        });
+        //        $http.get('/api/Ingredient/GetAll/').success(function (response) {
+        //            console.log(response);
+        //            deferred.resolve(response);
+        //        });
 
-    //        return deferred.promise();
-    //    };
-    //}
+        //        return deferred.promise();
+        //    };
+        //}
 
         //this.getBreadcrumb = function (foxId, displayName, productType, displayTitleYear) {
         //    var deferred = $q.defer();
@@ -61,4 +62,5 @@ market.factory('ingredientService', ['$http','$q', function ($http,$q) {
         //this.getAlternateTitles = function (fid) {
         //    return $http.get('/api/Title/TitleAlternates/' + fid);
         //};
-]);
+    ]);
+})();

@@ -202,13 +202,13 @@
     <Content Include="Scripts\angjslib\angular-touch.min.js" />
     <Content Include="Scripts\angjslib\angular.js" />
     <Content Include="Scripts\angjslib\angular.min.js" />
-    <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\common\common.js" />
-    <Content Include="Scripts\app\common\factories\ingredientService.js" />
-    <Content Include="Scripts\app\market\controllers\addIngredientCtrl.js" />
-    <Content Include="Scripts\app\market\controllers\marketCtrl.js" />
-    <Content Include="Scripts\app\market\controllers\veggieCtrl.js" />
-    <Content Include="Scripts\app\market\market.js" />
+    <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\app\common\common.module.js" />
+    <Content Include="Scripts\app\common\factories\ingredient.service.js" />
+    <Content Include="Scripts\app\market\controllers\addIngredient.controller.js" />
+    <Content Include="Scripts\app\market\controllers\market.controller.js" />
+    <Content Include="Scripts\app\market\controllers\veggie.controller.js" />
+    <Content Include="Scripts\app\market\market.module.js" />
     <Content Include="Scripts\app\market\views\market.tpl.html" />
     <Content Include="Scripts\app\market\views\marketAdd.tpl.html" />
     <Content Include="Scripts\app\market\views\marketRemove.tpl.html" />
@@ -273,6 +273,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\default\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MenuPlanSvc\MenuPlanSvc.csproj">
