@@ -202,12 +202,15 @@
     <Content Include="Scripts\angjslib\angular-touch.min.js" />
     <Content Include="Scripts\angjslib\angular.js" />
     <Content Include="Scripts\angjslib\angular.min.js" />
+    <Content Include="Scripts\app\app.config.js" />
+    <Content Include="Scripts\app\app.controller.js" />
     <Content Include="Scripts\app\app.module.js" />
     <Content Include="Scripts\app\common\common.module.js" />
-    <Content Include="Scripts\app\common\factories\ingredient.service.js" />
+    <Content Include="Scripts\app\market\factories\ingredient.service.js" />
     <Content Include="Scripts\app\market\controllers\addIngredient.controller.js" />
     <Content Include="Scripts\app\market\controllers\market.controller.js" />
     <Content Include="Scripts\app\market\controllers\veggie.controller.js" />
+    <Content Include="Scripts\app\market\market.config.js" />
     <Content Include="Scripts\app\market\market.module.js" />
     <Content Include="Scripts\app\market\views\market.tpl.html" />
     <Content Include="Scripts\app\market\views\marketAdd.tpl.html" />
@@ -255,11 +258,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\app\common\factories\" />
     <Folder Include="Scripts\app\common\filters\" />
     <Folder Include="Scripts\app\common\services\" />
     <Folder Include="Scripts\app\home\views\" />
     <Folder Include="Scripts\app\market\directives\" />
-    <Folder Include="Scripts\app\market\factories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

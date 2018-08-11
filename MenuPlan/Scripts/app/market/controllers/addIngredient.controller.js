@@ -3,7 +3,7 @@
 
     var market = angular.module("systemx.market");
 
-    market.controller('addIngredientCtrl', ['$http', '$log', '$scope',
+    market.controller('AddIngredientController', ['$http', '$log', '$scope',
         function ($http, $log, $scope) {
             let initialize = function () {
                 $scope.getCategories();
