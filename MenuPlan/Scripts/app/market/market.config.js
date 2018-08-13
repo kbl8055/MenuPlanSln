@@ -3,9 +3,9 @@
 
     angular
         .module('systemx.market')
-        .config('marketConfig', marketConfig);
+        .config(marketConfig);
 
-    marketConfig.$inject = ['stateProvider'];
+    marketConfig.$inject = ['$stateProvider'];
 
     function marketConfig($stateProvider) {
         $stateProvider

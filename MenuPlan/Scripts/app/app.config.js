@@ -3,7 +3,7 @@
 
     angular
         .module('systemx')
-        .config('appConfig', appConfig);
+        .config(appConfig);
 
     appConfig.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
 

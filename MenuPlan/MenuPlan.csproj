@@ -165,8 +165,10 @@
     <Content Include="Content\theme\bootstrap-theme.css" />
     <Content Include="Content\theme\bootstrap-theme.min.css" />
     <Content Include="Content\theme\fontAwesome.css" />
+    <Content Include="Content\theme\img\about_image.jpg" />
     <Content Include="Content\theme\img\author-itarian.jpg" />
     <Content Include="Content\theme\img\author_image.png" />
+    <Content Include="Content\theme\img\close.png" />
     <Content Include="Content\theme\img\first_bg.jpg" />
     <Content Include="Content\theme\img\Kali.jpg" />
     <Content Include="Content\theme\img\Kali2.jpg" />
@@ -175,6 +177,7 @@
     <Content Include="Content\theme\img\mini_logo.png" />
     <Content Include="Content\theme\img\next.png" />
     <Content Include="Content\theme\img\prev.png" />
+    <Content Include="Content\theme\img\second_bg.jpg" />
     <Content Include="Content\theme\js\datepicker.js" />
     <Content Include="Content\theme\js\main.js" />
     <Content Include="Content\theme\js\plugins.js" />
@@ -232,6 +235,8 @@
     <Content Include="Scripts\angjslib\angular-cookies.min.js.map" />
     <Content Include="Scripts\angjslib\angular-animate.min.js.map" />
     <Content Include="Content\theme\fonts\flexslider-icon.woff" />
+    <Content Include="Content\theme\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\theme\fonts\fontawesome-webfont.woff2" />
     <None Include="Scripts\default\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\default\jquery-1.10.2.js" />
     <Content Include="Scripts\default\jquery-1.10.2.min.js" />
