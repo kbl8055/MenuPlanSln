@@ -66,5 +66,4 @@
         //this.getAlternateTitles = function (fid) {
         //    return $http.get('/api/Title/TitleAlternates/' + fid);
         //};
-    ]
 })();
