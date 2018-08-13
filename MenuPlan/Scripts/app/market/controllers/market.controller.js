@@ -3,11 +3,11 @@
 
     angular
         .module("systemx.market")
-        .controller('MarketController',
-            function () {
-                //console.log(veggieList);
-                //$scope.name = veggieList;
-                //$scope.veggies = veggieList.data;
-            }
-        );
+        .controller('MarketController', MarketController);
+
+    MarketController.$inject = [];
+
+    function MarketController() {
+
+    }
 })();

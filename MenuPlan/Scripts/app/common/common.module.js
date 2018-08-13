@@ -1,5 +1,5 @@
 ﻿(function () {
     'use strict';
 
-    var common = angular.module('systemx.common', []);
+    angular.module('systemx.common', []);
 })();

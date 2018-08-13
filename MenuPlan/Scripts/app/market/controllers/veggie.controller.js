@@ -1,11 +1,13 @@
 ﻿(function () {
     'use strict';
 
-    var market = angular.module("systemx.market");
+    angular
+        .module("systemx.market")
+        .controller('VeggieController', VeggieController);
 
-    market.controller('VeggieController', ['$scope', 'veggieList',
-        function ($scope, veggieList) {
-            $scope.veggies = veggieList.data;
-        }
-    ]);
+    VeggieController.$inject = ['$scope', 'veggieList'];
+
+    function VeggieController($scope, veggieList) {
+        $scope.veggies = veggieList.data;
+    }
 })();

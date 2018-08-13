@@ -1,9 +1,13 @@
 ﻿(function () {
     'use strict';
 
-    var market = angular.module('systemx.market');
+    angular
+        .module('systemx.market')
+        .factory('ingredientService', ingredientService);
 
-    market.factory('ingredientService', ['$http', '$q', function ($http, $q) {
+    ingredientService.$inject = ['$http', '$q'];
+
+    function ingredientService ($http, $q) {
         return {
             //getAll: function ($http) {
             //        $http.get('/api/Ingredient/GetAll/').success(function (response) {
@@ -62,5 +66,5 @@
         //this.getAlternateTitles = function (fid) {
         //    return $http.get('/api/Title/TitleAlternates/' + fid);
         //};
-    ]);
+    ]
 })();

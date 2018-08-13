@@ -1,8 +1,13 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('systemx')
-        .controller('AppController', ['$scope', '$state', function ($scope, $state) {
+    angular
+        .module('systemx')
+        .controller('AppController', AppController);
+
+    AppController.$inject = ['$scope', '$state'];
+
+    function AppController($scope, $state) {
         $scope.navigationLinks = {
             goToHome: function () {
                 $state.go('home');
@@ -20,5 +25,5 @@
                 $state.go('marketUpdate');
             }
         };
-    }]);
+    }
 })();
