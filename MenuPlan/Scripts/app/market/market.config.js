@@ -25,9 +25,7 @@
                         controller: 'VeggieController',
                         templateUrl: 'Scripts/app/market/views/vegetable.tpl.html',
                         resolve: {
-                            veggieList: function (ingredientService) {
-                                return ingredientService.getAll();
-                            }
+                            veggieList: getAllIngredients
                         },
                         //getCategories: function () { return {}; },
                         //"veggieList": ['ingredientService', function (ingredientService) {
@@ -63,5 +61,9 @@
                     }
                 }
             });
+
+        function getAllIngredients(ingredientService) {
+            return ingredientService.getAll();
+        }
     }
 })();
