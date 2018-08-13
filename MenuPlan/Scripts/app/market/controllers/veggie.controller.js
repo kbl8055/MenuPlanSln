@@ -8,6 +8,13 @@
     VeggieController.$inject = ['$scope', 'veggieList'];
 
     function VeggieController($scope, veggieList) {
-        $scope.veggies = veggieList.data;
+        activate();
+
+        function activate() {
+            const vm = this;
+            vm.veggies = veggieList.data;
+
+            return vm.veggies;
+        }
     }
 })();

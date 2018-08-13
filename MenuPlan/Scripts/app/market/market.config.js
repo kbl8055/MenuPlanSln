@@ -23,6 +23,7 @@
                 views: {
                     "main": {
                         controller: 'VeggieController',
+                        controllerAs: 'vm',
                         templateUrl: 'Scripts/app/market/views/vegetable.tpl.html',
                         resolve: {
                             veggieList: getAllIngredients
