@@ -5,16 +5,15 @@
         .module("systemx.market")
         .controller('VeggieController', VeggieController);
 
-    VeggieController.$inject = ['$scope', 'veggieList'];
+    VeggieController.$inject = ['veggieList'];
 
-    function VeggieController($scope, veggieList) {
+    function VeggieController(veggieList) {
+        const vm = this;
+
         activate();
 
         function activate() {
-            const vm = this;
             vm.veggies = veggieList.data;
-
-            return vm.veggies;
         }
     }
 })();
