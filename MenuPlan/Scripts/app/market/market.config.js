@@ -40,6 +40,7 @@
                 views: {
                     "main": {
                         controller: 'AddIngredientController',
+                        controllerAs: 'vm',
                         templateUrl: 'Scripts/app/market/views/marketAdd.tpl.html',
                     }
                 }

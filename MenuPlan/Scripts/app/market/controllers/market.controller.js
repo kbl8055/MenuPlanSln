@@ -8,6 +8,11 @@
     MarketController.$inject = [];
 
     function MarketController() {
+		const vm = this;
 
+        activate();
+
+        function activate() {
+        }
     }
 })();

@@ -5,34 +5,50 @@
         .module("systemx.market")
         .controller('AddIngredientController', AddIngredientController);
 
-    AddIngredientController.$inject = ['$http', '$log', '$scope'];
+    AddIngredientController.$inject = ['$http', '$log'];
 
-    function AddIngredientController($http, $log, $scope) {
-        let initialize = function () {
-            $scope.getCategories();
-            $scope.selectedCategory = 'Select Category';
+    function AddIngredientController($http, $log) {
+        const vm = this;
+        vm.ingredient = { name: '', description: '', price: '', unitOfMeasure: ''}
+        vm.getCategories = getCategories;
+        vm.setCategory = setCategory;
+        vm.reset = reset;
+        vm.addIngredient = addIngredient;
+        vm.selectedCategory = 'Select Category';
+
+        activate();
+
+        function activate() {
+            getCategories();
+            reset();
         }
 
-        $scope.ingredient = { name: '', description: '', price: '', unitOfMeasure: '' };
-
-        $scope.getCategories = function () {
+        function getCategories() {
             return $http.get('/api/Lookup/GetCategories/')
                 .success(function (data) {
                     $log.log(data);
-                    $scope.categories = data;
+                    vm.categories = data;
                 })
                 .error(function (error) {
                     $log.log(error);
                 });
         }
 
-        $scope.setCategory = function (cat) {
-            $scope.selectedCategory = cat.Name;
-            $scope.ingredient.categoryId = cat.Id;
-        };
+        function setCategory(cat) {
+            vm.selectedCategory = cat.Name;
+            vm.ingredient.categoryId = cat.Id;
+        }
 
-        $scope.addIngredient = function () {
-            let addFormData = $scope.ingredient;
+        function reset() {
+            vm.ingredient.name = '';
+            vm.ingredient.description = '';
+            vm.ingredient.price = '';
+            vm.ingredient.unitOfMeasure = '';
+            vm.selectedCategory = 'Select Category';
+        }
+
+        function addIngredient() {
+            let addFormData = vm.ingredient;
 
             return $http.post('/api/Ingredient/Add/', addFormData)
                 .success(function (data) {
@@ -41,16 +57,6 @@
                 .error(function (error) {
                     $log.log('Most probably!');
                 });
-        };
-
-        $scope.reset = function () {
-            $scope.ingredient.name = '';
-            $scope.ingredient.description = '';
-            $scope.ingredient.price = '';
-            $scope.ingredient.unitOfMeasure = '';
-            $scope.selectedCategory = 'Select Category';
-        };
-
-        initialize();
+        }
     }
 })();
