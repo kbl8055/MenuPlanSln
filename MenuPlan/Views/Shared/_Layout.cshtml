@@ -54,10 +54,10 @@ d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.33
 
             <ul>
                 <li><a href="#1"><i class="fa fa-home"></i> <em>Home</em></a></li>
-                <li><a href="#5"><i class="fa fa-envelope"></i> <em>Your Author</em></a></li>
-                <li><a href="#2"><i class="fa fa-user"></i> <em>Search Diner</em></a></li>
-                <li><a href="#3"><i class="fa fa-pencil"></i> <em>Build Planner</em></a></li>
-                <li><a href="#1"><i class="fa fa-image"></i> <em>Go Market</em></a></li>
+                <li><a href="#2"><i class="fa fa-envelope"></i> <em>Your Author</em></a></li>
+                <li><a href="#NotImplemented1"><i class="fa fa-user"></i> <em>Search Diner</em></a></li>
+                <li><a href="#NotImplemented2"><i class="fa fa-pencil"></i> <em>Build Planner</em></a></li>
+                <li><a href="#NotImplemented3"><i class="fa fa-image"></i> <em>Go Market</em></a></li>
             </ul>
         </nav>
 
@@ -414,7 +414,7 @@ d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.33
         @Scripts.Render("~/bundles/controllers")
         @RenderSection("scripts", required: false)
 
-        <script type="text/javascript">
+        @*<script type="text/javascript">
             $(document).ready(function () {
                 // navigation click actions
                 $('.scroll-link').on('click', function (event) {
@@ -433,15 +433,20 @@ d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.33
                     $('#main-nav').toggleClass("open");
                 });
             });
-            // scroll function
+             scroll function
             function scrollToID(id, speed) {
-                var offSet = 0;
-                var targetOffset = $(id).offset().top - offSet;
-                var mainNav = $('#main-nav');
-                $('html,body').animate({ scrollTop: targetOffset }, speed);
-                if (mainNav.hasClass("open")) {
-                    mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-                    mainNav.removeClass("open");
+                var el = $('#' + id);
+                console.log(el);
+
+                if (el) {
+                    var offSet = 0;
+                    var targetOffset = $(id).offset().top - offSet;
+                    var mainNav = $('#main-nav');
+                    $('html,body').animate({ scrollTop: targetOffset }, speed);
+                    if (mainNav.hasClass("open")) {
+                        mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+                        mainNav.removeClass("open");
+                    }
                 }
             }
             if (typeof console === "undefined") {
@@ -449,6 +454,6 @@ d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.33
                     log: function () { }
                 };
             }
-        </script>
+        </script>*@
     </body>
 </html>
