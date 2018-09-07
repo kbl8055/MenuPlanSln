@@ -31,9 +31,12 @@ namespace MenuPlan.Controllers
         //}
 
         // GET api/<controller>/5
-        public string Get(int id)
+        [Route("api/Ingredient/GetByCategory/{catName}")]
+        public Ingredient[] Get(string catName)
         {
-            return "value";
+            var client = new ServiceIngredientClient();
+            var result = client.GetIngredientsByCategory(catName);
+            return result;
         }
 
         // TODO: Complete this request - not working on front-end files?

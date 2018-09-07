@@ -23,6 +23,13 @@
                         return response;
                     })
                 );
+            },
+            getByCat: function (catName) {
+                return $q.when(
+                    $http.get('/api/Ingredient/GetByCategory/' + catName).success(function (response) {
+                        return response;
+                    })
+                );
             }
         };
     }
