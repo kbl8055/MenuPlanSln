@@ -15,8 +15,9 @@
             goToMarket: function () {
                 $state.go('masterList');
             },
-            removeIngredient: function (name) {
+            removeIngredient: function (id, name) {
                 $state.go('marketRemove', {
+                    id: id,
                     name: name
                 });
             },

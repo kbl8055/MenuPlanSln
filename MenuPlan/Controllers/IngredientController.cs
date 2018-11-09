@@ -56,8 +56,11 @@ namespace MenuPlan.Controllers
         }
 
         // DELETE api/<controller>/5
+        [Route("api/Ingredient/Delete/{id}")]
         public void Delete(int id)
         {
+            var client = new ServiceIngredientClient();
+            client.DeleteIngredient(id);
         }
     }
 }

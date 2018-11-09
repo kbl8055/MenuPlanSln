@@ -30,6 +30,14 @@
                         return response;
                     })
                 );
+            },
+            removeIngr: function (id) {
+                return $q.when(
+                    $http.delete('api/Ingredient/Delete/' + id).success(function (response) {
+                        console.log(response);
+                        return response;
+                    })
+                );
             }
         };
     }

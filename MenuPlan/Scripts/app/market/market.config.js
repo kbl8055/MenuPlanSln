@@ -63,7 +63,7 @@
                 }
             })
             .state('marketRemove', {
-                url: '/market/remove/:name',
+                url: '/market/remove/:id/:name',
                 views: {
                     "main": {
                         controller: 'RemoveIngredientController',

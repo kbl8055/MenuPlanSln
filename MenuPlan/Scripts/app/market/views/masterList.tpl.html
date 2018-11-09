@@ -22,7 +22,7 @@
                     <td>per {{ingr.UnitOfMeasure}}</td>
                     <td>
                         <a class="btn-sm btn-default small left" ng-click="navigationLinks.updateIngredient(ingr)">Edit</a>
-                        <a class="btn-sm btn-danger small right" ng-click="navigationLinks.removeIngredient(ingr.Name)">Remove</a>
+                        <a class="btn-sm btn-danger small right" ng-click="navigationLinks.removeIngredient(ingr.Id, ingr.Name)">Remove</a>
                     </td>
                 </tr>
                 <tr>
