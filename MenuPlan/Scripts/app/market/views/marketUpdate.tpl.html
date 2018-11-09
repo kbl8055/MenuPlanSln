@@ -1,2 +1,36 @@
-﻿<h1>Update Ingredient</h1>
-<button class="btn btn-warning" ng-click="navigationLinks.goToMarket()">Back to Market</button>
+﻿<h2>Update Ingredient</h2>
+
+<div class="temp big">
+    <form novalidate>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Name" class="form-control" ng-model="vm.ingredient.Name" required />
+        </div>
+        <div class="form-group">
+            <label>Description:</label>
+            <textarea name="description" placeholder="Describe this ingredient" class="form-control" ng-model="vm.ingredient.Description" />
+        </div>
+        <div class="form-group">
+            <label>Price:</label>
+            <input type="text" name="price" placeholder="Price" class="form-control" ng-model="vm.ingredient.Price" required />
+        </div>
+        <div class="form-group">
+            <label>Unit of Measure:</label>
+            <input type="text" name="unitOfMeasure" placeholder="Unit of Measure" class="form-control" ng-model="vm.ingredient.UnitOfMeasure" required />
+        </div>
+        <br />
+        <!--<div class="form-group">
+            <label>Category:</label>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{vm.selectedCategory}}<span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation" ng-repeat="cat in vm.categories"><a role="menuitem" ng-click="vm.setCategory(cat)">{{cat.Name}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <br />
+        <button class="btn btn-danger" ng-click="vm.reset()">Clear</button>-->
+        <button class="btn btn-default" ng-click="navigationLinks.goToMarket()">Cancel</button>
+        <button class="btn btn-success" ng-click="">Save</button>
+    </form>
+</div>

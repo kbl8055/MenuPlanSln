@@ -18,6 +18,19 @@
                     }
                 }
             })
+            .state('masterList', {
+                url: '/masterList',
+                views: {
+                    "main": {
+                        controller: 'MasterListController',
+                        controllerAs: 'vm',
+                        templateUrl: 'Scripts/app/market/views/masterList.tpl.html',
+                        resolve: {
+                            ingredients: getAllIngredients
+                        },
+                    }
+                }
+            })
             .state('vegetable', {
                 url: '/market/vegetable',
                 views: {
@@ -27,7 +40,10 @@
                         templateUrl: 'Scripts/app/market/views/vegetable.tpl.html',
                         resolve: {
                             //veggieList: getAllIngredients
-                            veggieList: getIngredientsByCat()
+                            veggieList: getIngredientsByCat
+                            //"veggieList": ['ingredientService', function (ingredientService) {
+                            //    return ingredientService.getAll();
+                            //}]
                         },
                         //getCategories: function () { return {}; },
                         //"veggieList": ['ingredientService', function (ingredientService) {
@@ -47,19 +63,21 @@
                 }
             })
             .state('marketRemove', {
-                url: '/market/remove',
+                url: '/market/remove/:name',
                 views: {
                     "main": {
-                        //controller: 'marketCtrl',
+                        controller: 'RemoveIngredientController',
+                        controllerAs: 'vm',
                         templateUrl: 'Scripts/app/market/views/marketRemove.tpl.html',
                     }
                 }
             })
             .state('marketUpdate', {
-                url: '/market/update',
+                url: '/market/update/{ingredient:json}',
                 views: {
                     "main": {
-                        //controller: 'marketCtrl',
+                        controller: 'EditIngredientController',
+                        controllerAs: 'vm',
                         templateUrl: 'Scripts/app/market/views/marketUpdate.tpl.html',
                     }
                 }

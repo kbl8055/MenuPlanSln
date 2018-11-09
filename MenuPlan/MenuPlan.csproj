@@ -209,6 +209,9 @@
     <Content Include="Scripts\app\app.controller.js" />
     <Content Include="Scripts\app\app.module.js" />
     <Content Include="Scripts\app\common\common.module.js" />
+    <Content Include="Scripts\app\market\controllers\editIngredient.controller.js" />
+    <Content Include="Scripts\app\market\controllers\masterList.controller.js" />
+    <Content Include="Scripts\app\market\controllers\removeIngredient.controller.js" />
     <Content Include="Scripts\app\market\factories\ingredient.service.js" />
     <Content Include="Scripts\app\market\controllers\addIngredient.controller.js" />
     <Content Include="Scripts\app\market\controllers\market.controller.js" />
@@ -219,6 +222,7 @@
     <Content Include="Scripts\app\market\views\marketAdd.tpl.html" />
     <Content Include="Scripts\app\market\views\marketRemove.tpl.html" />
     <Content Include="Scripts\app\market\views\marketUpdate.tpl.html" />
+    <Content Include="Scripts\app\market\views\masterList.tpl.html" />
     <Content Include="Scripts\app\market\views\vegetable.tpl.html" />
     <Content Include="Scripts\default\bootstrap.js" />
     <Content Include="Scripts\default\bootstrap.min.js" />
@@ -305,7 +309,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51713</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

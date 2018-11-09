@@ -5,9 +5,9 @@
         .module("systemx.market")
         .controller('AddIngredientController', AddIngredientController);
 
-    AddIngredientController.$inject = ['$http', '$log'];
+    AddIngredientController.$inject = ['$http', '$log', '$state'];
 
-    function AddIngredientController($http, $log) {
+    function AddIngredientController($http, $log, $state) {
         const vm = this;
         vm.ingredient = { name: '', description: '', price: '', unitOfMeasure: ''}
         vm.getCategories = getCategories;
@@ -53,6 +53,8 @@
             return $http.post('/api/Ingredient/Add/', addFormData)
                 .success(function (data) {
                     $log.log(data);
+                    reset();
+                    $state.go('masterList');
                 })
                 .error(function (error) {
                     $log.log('Most probably!');

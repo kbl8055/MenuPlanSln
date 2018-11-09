@@ -40,8 +40,8 @@ namespace MenuPlan
 
             bundles.Add(new ScriptBundle("~/bundles/modules").IncludeDirectory("~/Scripts/app", "*.module.js", true));
             bundles.Add(new ScriptBundle("~/bundles/configurations").IncludeDirectory("~/Scripts/app", "*.config.js", true));
-            bundles.Add(new ScriptBundle("~/bundles/routes").IncludeDirectory("~/Scripts/app", "*.route.js", true));
             bundles.Add(new ScriptBundle("~/bundles/services").IncludeDirectory("~/Scripts/app", "*.service.js", true));
+            bundles.Add(new ScriptBundle("~/bundles/routes").IncludeDirectory("~/Scripts/app", "*.route.js", true));
             bundles.Add(new ScriptBundle("~/bundles/controllers").IncludeDirectory("~/Scripts/app", "*.controller.js", true));
         }
     }

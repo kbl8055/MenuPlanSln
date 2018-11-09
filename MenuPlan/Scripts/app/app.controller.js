@@ -13,16 +13,20 @@
                 $state.go('home');
             },
             goToMarket: function () {
-                $state.go('market');
+                $state.go('masterList');
             },
-            removeIngredient: function () {
-                $state.go('marketRemove');
+            removeIngredient: function (name) {
+                $state.go('marketRemove', {
+                    name: name
+                });
             },
             addIngredient: function () {
                 $state.go('marketAdd');
             },
-            updateIngredient: function () {
-                $state.go('marketUpdate');
+            updateIngredient: function (ingredient) {
+                $state.go('marketUpdate', {
+                    ingredient: ingredient
+                }, { location: false });
             }
         };
     }

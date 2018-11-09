@@ -9,6 +9,6 @@
 
     function appConfig($stateProvider, $locationProvider, $urlRouterProvider) {
             //$locationProvider.html5Mode(true);
-            $urlRouterProvider.otherwise('/market');
+            $urlRouterProvider.otherwise('/masterList');
     }
 })();

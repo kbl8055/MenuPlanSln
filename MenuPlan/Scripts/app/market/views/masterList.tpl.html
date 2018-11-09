@@ -1,0 +1,39 @@
+﻿<div class="temp big">
+    <h2>Ingredients List</h2>
+
+    <p>Search: <input type="text" name="searchText" class="form-control" placeholder="Search Ingredients" ng-model="searchText" /></p>
+
+    <div class="container">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th class="text-center">Description</th>
+                    <th>Price</th>
+                    <th>Unit of Measure</th>
+                    <th class="text-center action">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ingr in vm.ingredients | filter: searchText">
+                    <td>{{ingr.Name}}</td>
+                    <td>{{ingr.Description}}</td>
+                    <td class="text-right">{{ingr.Price | currency:'₱'}}</td>
+                    <td>per {{ingr.UnitOfMeasure}}</td>
+                    <td>
+                        <a class="btn-sm btn-default small left" ng-click="navigationLinks.updateIngredient(ingr)">Edit</a>
+                        <a class="btn-sm btn-danger small right" ng-click="navigationLinks.removeIngredient(ingr.Name)">Remove</a>
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                    <button class="btn btn-primary" ng-click="navigationLinks.addIngredient()">Add to List</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br />
+        <span ng-show={{errorMessage}}>May error dude!</span><br />
+        <br />
+    </div>
+</div>
