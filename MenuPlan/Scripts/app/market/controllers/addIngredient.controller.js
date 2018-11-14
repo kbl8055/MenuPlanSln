@@ -9,11 +9,12 @@
 
     function AddIngredientController($http, $log, $state) {
         const vm = this;
-        vm.ingredient = { name: '', description: '', price: '', unitOfMeasure: ''}
+        vm.ingredient = { name: '', description: '', price: '', unitOfMeasure: '', categoryId: undefined }
         vm.getCategories = getCategories;
         vm.setCategory = setCategory;
         vm.reset = reset;
         vm.addIngredient = addIngredient;
+        vm.valFormAddIngr = valFormAddIngr;
         vm.selectedCategory = 'Select Category';
 
         activate();
@@ -26,7 +27,6 @@
         function getCategories() {
             return $http.get('/api/Lookup/GetCategories/')
                 .success(function (data) {
-                    $log.log(data);
                     vm.categories = data;
                 })
                 .error(function (error) {
@@ -44,6 +44,7 @@
             vm.ingredient.description = '';
             vm.ingredient.price = '';
             vm.ingredient.unitOfMeasure = '';
+            vm.ingredient.categoryId = undefined;
             vm.selectedCategory = 'Select Category';
         }
 
@@ -52,13 +53,20 @@
 
             return $http.post('/api/Ingredient/Add/', addFormData)
                 .success(function (data) {
-                    $log.log(data);
                     reset();
                     $state.go('masterList');
                 })
                 .error(function (error) {
                     $log.log('Most probably!');
                 });
+        }
+
+        function valFormAddIngr(isValid) {
+            vm.submitted = true;
+
+            if (isValid) {
+                addIngredient();
+            }
         }
     }
 })();

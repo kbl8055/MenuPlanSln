@@ -146,6 +146,7 @@ http://www.templatemo.com/tm-512-moonlight
 * {
   margin: 0;
   padding: 0;
+  padding-bottom: 5px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;

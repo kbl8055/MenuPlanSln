@@ -1,36 +1,54 @@
 ﻿<div class="temp big">
     <h2>Add Ingredient</h2>
-    <form novalidate>
-        <div class="form-group">
+    <form name="frmAddIngr" ng-submit="vm.valFormAddIngr(frmAddIngr.$valid)" novalidate>
+        <div class="form-group" ng-class="{'has-error': vm.submitted && frmAddIngr.name.$invalid,
+             'has-success': vm.submitted && frmAddIngr.name.$valid}">
+            <!--<label for="name" class="control-label">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" ng-model="vm.ingredient.name" required />
+        <p class="help-block" ng-show="frmAddIngr.name.$dirty && frmAddIngr.name.$invalid">This field is required</p>-->
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Name" class="form-control" ng-model="vm.ingredient.name" required />
+            <input type="text" id="name" name="name" placeholder="Name" class="form-control" ng-model="vm.ingredient.name" ng-maxlength="100" required />
+            <p ng-show="vm.submitted && frmAddIngr.name.$error.required">This field is required</p>
+            <p ng-show="vm.submitted && frmAddIngr.name.$error.maxlength">Limit to less than 100 characters</p>
         </div>
-        <div class="form-group">
-            <label>Description:</label>
-            <textarea name="description" placeholder="Describe this ingredient" class="form-control" ng-model="vm.ingredient.description" />
+        <div class="form-group" ng-class="{'has-error': vm.submitted && frmAddIngr.description.$invalid,
+             'has-success': vm.submitted && frmAddIngr.description.$valid}">
+            <label for="description">Description:</label>
+            <textarea name="description" placeholder="Describe ingredient here in not more than 300 characters" class="form-control" rows="3" cols="50" ng-model="vm.ingredient.description" ng-maxlength="300" required />
+            <p ng-show="vm.submitted && frmAddIngr.description.$error.required">This field is required</p>
+            <p ng-show="vm.submitted && frmAddIngr.description.$error.maxlength">Limit to less than 300 characters</p>
         </div>
-        <div class="form-group">
-            <label>Price:</label>
+        <div class="form-group" ng-class="{'has-error': vm.submitted && frmAddIngr.price.$invalid,
+             'has-success': vm.submitted && frmAddIngr.price.$valid}">
+            <label for="price">Price:</label>
             <input type="number" name="price" placeholder="Price" class="form-control" ng-model="vm.ingredient.price" required />
+            <p ng-show="vm.submitted && frmAddIngr.price.$error.required">This field is required</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error': vm.submitted && frmAddIngr.unitOfMeasure.$invalid,
+             'has-success': vm.submitted && frmAddIngr.unitOfMeasure.$valid}">
+            <label for="unitOfMeasure">Unit of Measure:</label>
+            <input type="text" name="unitOfMeasure" placeholder="Unit of Measure" class="form-control" ng-model="vm.ingredient.unitOfMeasure" required />
+            <p ng-show="vm.submitted && frmAddIngr.unitOfMeasure.$error.required">This field is required</p>
         </div>
         <div class="form-group">
-            <label>Unit of Measure:</label>
-            <input type="number" name="unitOfMeasure" placeholder="Unit of Measure" class="form-control" ng-model="vm.ingredient.unitOfMeasure" required />
-        </div>
-        <br />
-        <div class="form-group">
-            <label>Category:</label>
+            <input type="hidden" name="categoryId" ng-model="vm.ingredient.categoryId" required />
+            <label for="categoryId">Category:</label>
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{vm.selectedCategory}}<span class="caret"></span></button>
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" ng-class="{'dropdown-error': vm.submitted && frmAddIngr.categoryId.$invalid,
+             'dropdown-success': vm.submitted && frmAddIngr.categoryId.$valid}">
+                    {{vm.selectedCategory}} <span class="caret"></span>
+                </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation" ng-repeat="cat in vm.categories"><a role="menuitem" ng-click="vm.setCategory(cat)">{{cat.Name}}</a></li>
+                    <li role="presentation" ng-repeat="cat in vm.categories">
+                        <a role="menuitem" ng-click="vm.setCategory(cat)">{{cat.Name}}</a>
+                    </li>
                 </ul>
             </div>
-            <!--<input type="text" name="unitOfMeasure" placeholder="Unit of Measure" class="form-control" ng-model="vm.ingredient.unitOfMeasure" required />-->
+            <p ng-show="vm.submitted && frmAddIngr.categoryId.$error.required">You must select an item from the list</p>
         </div>
         <br />
         <button class="btn btn-default" ng-click="navigationLinks.goToMarket()">Cancel</button>
-        <button class="btn btn-success" ng-click="vm.addIngredient()">Save</button>
+        <button class="btn btn-success" type="submit">Save</button>
         <!--<button class="btn btn-danger" ng-click="vm.reset()">Clear</button>-->
     </form>
 </div>

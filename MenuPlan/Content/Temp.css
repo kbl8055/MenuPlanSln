@@ -43,3 +43,11 @@ a.right {
 th.action {
     width: 120px;
 }
+
+.dropdown-success {
+    border-color: #356635;
+}
+
+.dropdown-error {
+    border-color: #b94a48;
+}
