@@ -37,6 +37,12 @@
   <wsdl:message name="IServiceIngredient_GetIngredientsByCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetIngredientsByCategoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceIngredient_GetAllIngredientsWithCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllIngredientsWithCategory" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIngredient_GetAllIngredientsWithCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllIngredientsWithCategoryResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceIngredient">
     <wsdl:operation name="AddIngredient">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceIngredient/AddIngredient" message="tns:IServiceIngredient_AddIngredient_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="GetIngredientsByCategory">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceIngredient/GetIngredientsByCategory" message="tns:IServiceIngredient_GetIngredientsByCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceIngredient/GetIngredientsByCategoryResponse" message="tns:IServiceIngredient_GetIngredientsByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllIngredientsWithCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceIngredient/GetAllIngredientsWithCategory" message="tns:IServiceIngredient_GetAllIngredientsWithCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceIngredient/GetAllIngredientsWithCategoryResponse" message="tns:IServiceIngredient_GetAllIngredientsWithCategory_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceIngredient" type="tns:IServiceIngredient">
@@ -99,6 +109,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetIngredientsByCategory">
       <soap:operation soapAction="http://tempuri.org/IServiceIngredient/GetIngredientsByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllIngredientsWithCategory">
+      <soap:operation soapAction="http://tempuri.org/IServiceIngredient/GetAllIngredientsWithCategory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -39,6 +39,14 @@ namespace MenuPlan.Controllers
             return result;
         }
 
+        [Route("api/Ingredient/GetAllWithCategories/")]
+        public Ingredient[] GetAllWithCategories()
+        {
+            var client = new ServiceIngredientClient();
+            var result = client.GetAllIngredientsWithCategory();
+            return result;
+        }
+
         // TODO: Complete this request - not working on front-end files?
         // POST api/<controller>
         [Route("api/Ingredient/Add/")]
@@ -51,8 +59,13 @@ namespace MenuPlan.Controllers
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        [Route("api/Ingredient/Edit/")]
+        public string Put(Ingredient formEdit)
         {
+            //var client = new ServiceIngredientClient();
+            //client.EditIngredient(formEdit);
+            var message = "Editing Ingredient!";
+            return message.ToUpper();
         }
 
         // DELETE api/<controller>/5

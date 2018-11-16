@@ -8,20 +8,20 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Category</th>
                     <th class="text-center">Description</th>
                     <th>Price</th>
                     <th>Unit of Measure</th>
-                    <!--<th>Category</th>-->
                     <th class="text-center action">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="ingr in vm.ingredients | filter: searchText">
                     <td>{{ingr.Name}}</td>
+                    <td>{{ingr.Category.Name}}</td>
                     <td>{{ingr.Description}}</td>
                     <td class="text-right">{{ingr.Price | currency:'₱'}}</td>
                     <td>{{ingr.UnitOfMeasure}}</td>
-                    <!--<td>{{ingr.Category}}</td>-->
                     <td>
                         <a class="btn-sm btn-default small left" ng-click="navigationLinks.updateIngredient(ingr)">Edit</a>
                         <a class="btn-sm btn-danger small right" ng-click="navigationLinks.removeIngredient(ingr.Id, ingr.Name)">Remove</a>

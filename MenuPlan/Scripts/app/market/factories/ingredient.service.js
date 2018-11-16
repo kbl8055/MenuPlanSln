@@ -24,6 +24,13 @@
                     })
                 );
             },
+            getAllWithCategories: function () {
+                return $q.when(
+                    $http.get('/api/Ingredient/getAllWithCategories/').success(function (response) {
+                        return response;
+                    })
+                );
+            },
             getByCat: function (catName) {
                 return $q.when(
                     $http.get('/api/Ingredient/GetByCategory/' + catName).success(function (response) {

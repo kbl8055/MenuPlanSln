@@ -26,7 +26,7 @@
                         controllerAs: 'vm',
                         templateUrl: 'Scripts/app/market/views/masterList.tpl.html',
                         resolve: {
-                            ingredients: getAllIngredients
+                            ingredients: getAllIngredientsWithCategories
                         },
                     }
                 }
@@ -85,6 +85,10 @@
 
         function getAllIngredients(ingredientService) {
             return ingredientService.getAll();
+        }
+
+        function getAllIngredientsWithCategories(ingredientService) {
+            return ingredientService.getAllWithCategories();
         }
 
         function getIngredientsByCat(ingredientService) {

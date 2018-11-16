@@ -23,6 +23,7 @@
             <label for="price">Price:</label>
             <input type="number" name="price" placeholder="Price" class="form-control" ng-model="vm.ingredient.price" required />
             <p ng-show="vm.submitted && frmAddIngr.price.$error.required">This field is required</p>
+            <p ng-show="vm.submitted && frmEditIngr.price.$error.number">Must input a number</p>
         </div>
         <div class="form-group" ng-class="{'has-error': vm.submitted && frmAddIngr.unitOfMeasure.$invalid,
              'has-success': vm.submitted && frmAddIngr.unitOfMeasure.$valid}">

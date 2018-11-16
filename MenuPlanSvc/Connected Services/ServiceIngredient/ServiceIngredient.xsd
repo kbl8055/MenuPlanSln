@@ -65,4 +65,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllIngredientsWithCategory">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllIngredientsWithCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RestoReviewService.Business" minOccurs="0" name="GetAllIngredientsWithCategoryResult" nillable="true" type="q6:ArrayOfIngredient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

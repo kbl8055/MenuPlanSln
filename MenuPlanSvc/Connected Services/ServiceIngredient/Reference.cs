@@ -23,6 +23,9 @@ namespace MenuPlanSvc.ServiceIngredient {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MenuPlanSvc.ServiceIngredient.Category CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CategoryIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -47,6 +50,19 @@ namespace MenuPlanSvc.ServiceIngredient {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MenuPlanSvc.ServiceIngredient.Category Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
             }
         }
         
@@ -138,6 +154,83 @@ namespace MenuPlanSvc.ServiceIngredient {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/RestoReviewService.Business")]
+    [System.SerializableAttribute()]
+    public partial class Category : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceIngredient.IServiceIngredient")]
     public interface IServiceIngredient {
@@ -171,6 +264,12 @@ namespace MenuPlanSvc.ServiceIngredient {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceIngredient/GetIngredientsByCategory", ReplyAction="http://tempuri.org/IServiceIngredient/GetIngredientsByCategoryResponse")]
         System.Threading.Tasks.Task<MenuPlanSvc.ServiceIngredient.Ingredient[]> GetIngredientsByCategoryAsync(string categoryName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceIngredient/GetAllIngredientsWithCategory", ReplyAction="http://tempuri.org/IServiceIngredient/GetAllIngredientsWithCategoryResponse")]
+        MenuPlanSvc.ServiceIngredient.Ingredient[] GetAllIngredientsWithCategory();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceIngredient/GetAllIngredientsWithCategory", ReplyAction="http://tempuri.org/IServiceIngredient/GetAllIngredientsWithCategoryResponse")]
+        System.Threading.Tasks.Task<MenuPlanSvc.ServiceIngredient.Ingredient[]> GetAllIngredientsWithCategoryAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -238,6 +337,14 @@ namespace MenuPlanSvc.ServiceIngredient {
         
         public System.Threading.Tasks.Task<MenuPlanSvc.ServiceIngredient.Ingredient[]> GetIngredientsByCategoryAsync(string categoryName) {
             return base.Channel.GetIngredientsByCategoryAsync(categoryName);
+        }
+        
+        public MenuPlanSvc.ServiceIngredient.Ingredient[] GetAllIngredientsWithCategory() {
+            return base.Channel.GetAllIngredientsWithCategory();
+        }
+        
+        public System.Threading.Tasks.Task<MenuPlanSvc.ServiceIngredient.Ingredient[]> GetAllIngredientsWithCategoryAsync() {
+            return base.Channel.GetAllIngredientsWithCategoryAsync();
         }
     }
 }
