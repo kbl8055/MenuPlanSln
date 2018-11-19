@@ -62,9 +62,10 @@ namespace MenuPlan.Controllers
         [Route("api/Ingredient/Edit/")]
         public string Put(Ingredient formEdit)
         {
-            //var client = new ServiceIngredientClient();
-            //client.EditIngredient(formEdit);
+            var client = new ServiceIngredientClient();
+            client.EditIngredient(formEdit);
             var message = "Editing Ingredient!";
+
             return message.ToUpper();
         }
 
