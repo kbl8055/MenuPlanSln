@@ -210,23 +210,17 @@
     <Content Include="Scripts\app\app.module.js" />
     <Content Include="Scripts\app\common\common.module.js" />
     <Content Include="Scripts\app\market\controllers\addEditIngredient.controller.js" />
-    <Content Include="Scripts\app\market\controllers\editIngredient.controller.js" />
     <Content Include="Scripts\app\market\controllers\masterList.controller.js" />
     <Content Include="Scripts\app\market\controllers\removeIngredient.controller.js" />
     <Content Include="Scripts\app\market\directives\add-edit-form.directive.js" />
     <Content Include="Scripts\app\market\factories\ingredient.service.js" />
-    <Content Include="Scripts\app\market\controllers\addIngredient.controller.js" />
-    <Content Include="Scripts\app\market\controllers\market.controller.js" />
-    <Content Include="Scripts\app\market\controllers\veggie.controller.js" />
     <Content Include="Scripts\app\market\market.config.js" />
     <Content Include="Scripts\app\market\market.module.js" />
-    <Content Include="Scripts\app\market\views\market.tpl.html" />
     <Content Include="Scripts\app\market\views\marketAdd.tpl.html" />
     <Content Include="Scripts\app\market\views\addEditForm.tpl.html" />
     <Content Include="Scripts\app\market\views\marketRemove.tpl.html" />
     <Content Include="Scripts\app\market\views\marketUpdate.tpl.html" />
     <Content Include="Scripts\app\market\views\masterList.tpl.html" />
-    <Content Include="Scripts\app\market\views\vegetable.tpl.html" />
     <Content Include="Scripts\default\bootstrap.js" />
     <Content Include="Scripts\default\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -244,6 +238,8 @@
     <Content Include="Content\theme\fonts\flexslider-icon.woff" />
     <Content Include="Content\theme\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\theme\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\app\common\controllers\.gitkeep" />
+    <Content Include="Scripts\app\common\directives\.gitkeep" />
     <None Include="Scripts\default\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\default\jquery-1.10.2.js" />
     <Content Include="Scripts\default\jquery-1.10.2.min.js" />
@@ -262,9 +258,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout - Modified.cshtml" />
     <Content Include="Scripts\angjslib\version.json" />
-    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -273,7 +267,10 @@
     <Folder Include="Scripts\app\common\factories\" />
     <Folder Include="Scripts\app\common\filters\" />
     <Folder Include="Scripts\app\common\services\" />
+    <Folder Include="Scripts\app\common\views\" />
     <Folder Include="Scripts\app\home\views\" />
+    <Folder Include="Scripts\endpointTests\" />
+    <Folder Include="Scripts\test\e2e\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
