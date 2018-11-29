@@ -1,6 +1,7 @@
 ﻿<div class="temp big">
     <h2>Update Ingredient</h2>
-    <form name="frmEditIngr" ng-submit="vm.valFormEditIngr(frmEditIngr.$valid)" novalidate>
+    <add-edit-form mode="edit" on-go-market="goMarket"></add-edit-form>
+    <!--<form name="frmEditIngr" ng-submit="vm.valFormEditIngr(frmEditIngr.$valid)" novalidate>
         <div class="form-group" ng-class="{'has-error': vm.submitted && frmEditIngr.name.$invalid,
              'has-success': vm.submitted && frmEditIngr.name.$valid}">
             <label for="name">Name:</label>
@@ -47,6 +48,5 @@
         <br />
         <button class="btn btn-default" type="button" ng-click="navigationLinks.goToMarket()">Cancel</button>
         <button class="btn btn-success" type="submit">Save</button>
-        <!--<button class="btn btn-info" type="reset" ng-click="vm.undo()">Undo</button>-->
-    </form>
+    </form>-->
 </div>

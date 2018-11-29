@@ -1,11 +1,9 @@
 ﻿<div class="temp big">
-    <h2>Add Ingredient</h2>
-    <form name="frmAddIngr" ng-submit="vm.valFormAddIngr(frmAddIngr.$valid)" novalidate>
+    <h2>Add Ingredient</h2><br />
+    <add-edit-form mode="add" on-go-market="goMarket"></add-edit-form>
+    <!--<form name="frmAddIngr" ng-submit="vm.valFormAddIngr(frmAddIngr.$valid)" novalidate>
         <div class="form-group" ng-class="{'has-error': vm.submitted && frmAddIngr.name.$invalid,
              'has-success': vm.submitted && frmAddIngr.name.$valid}">
-            <!--<label for="name" class="control-label">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" ng-model="vm.ingredient.name" required />
-        <p class="help-block" ng-show="frmAddIngr.name.$dirty && frmAddIngr.name.$invalid">This field is required</p>-->
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Name" class="form-control" ng-model="vm.ingredient.name" ng-maxlength="100" required />
             <p ng-show="vm.submitted && frmAddIngr.name.$error.required">This field is required</p>
@@ -50,6 +48,5 @@
         <br />
         <button class="btn btn-default" ng-click="navigationLinks.goToMarket()">Cancel</button>
         <button class="btn btn-success" type="submit">Save</button>
-        <!--<button class="btn btn-danger" ng-click="vm.reset()">Clear</button>-->
-    </form>
+    </form>-->
 </div>

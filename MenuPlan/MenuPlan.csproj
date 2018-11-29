@@ -209,9 +209,11 @@
     <Content Include="Scripts\app\app.controller.js" />
     <Content Include="Scripts\app\app.module.js" />
     <Content Include="Scripts\app\common\common.module.js" />
+    <Content Include="Scripts\app\market\controllers\addEditIngredient.controller.js" />
     <Content Include="Scripts\app\market\controllers\editIngredient.controller.js" />
     <Content Include="Scripts\app\market\controllers\masterList.controller.js" />
     <Content Include="Scripts\app\market\controllers\removeIngredient.controller.js" />
+    <Content Include="Scripts\app\market\directives\add-edit-form.directive.js" />
     <Content Include="Scripts\app\market\factories\ingredient.service.js" />
     <Content Include="Scripts\app\market\controllers\addIngredient.controller.js" />
     <Content Include="Scripts\app\market\controllers\market.controller.js" />
@@ -220,6 +222,7 @@
     <Content Include="Scripts\app\market\market.module.js" />
     <Content Include="Scripts\app\market\views\market.tpl.html" />
     <Content Include="Scripts\app\market\views\marketAdd.tpl.html" />
+    <Content Include="Scripts\app\market\views\addEditForm.tpl.html" />
     <Content Include="Scripts\app\market\views\marketRemove.tpl.html" />
     <Content Include="Scripts\app\market\views\marketUpdate.tpl.html" />
     <Content Include="Scripts\app\market\views\masterList.tpl.html" />
@@ -271,7 +274,6 @@
     <Folder Include="Scripts\app\common\filters\" />
     <Folder Include="Scripts\app\common\services\" />
     <Folder Include="Scripts\app\home\views\" />
-    <Folder Include="Scripts\app\market\directives\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

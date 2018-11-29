@@ -1,0 +1,49 @@
+﻿<form name="frmIngr" ng-submit="vm.valForm(frmIngr.$valid)" novalidate>
+    <div class="form-group" ng-class="{'has-error': vm.submitted && frmIngr.name.$invalid,
+             'has-success': vm.submitted && frmIngr.name.$valid}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" ng-model="vm.ingredient.name" ng-maxlength="100" required />
+        <p ng-show="vm.submitted && frmIngr.name.$error.required">This field is required</p>
+        <p ng-show="vm.submitted && frmIngr.name.$error.maxlength">Limit to less than 100 characters</p>
+    </div>
+    <div class="form-group" ng-class="{'has-error': vm.submitted && frmIngr.description.$invalid,
+             'has-success': vm.submitted && frmIngr.description.$valid}">
+        <label for="description">Description:</label>
+        <textarea name="description" placeholder="Describe ingredient here in not more than 300 characters" class="form-control" rows="3" cols="50" ng-model="vm.ingredient.description" ng-maxlength="300" required />
+        <p ng-show="vm.submitted && frmIngr.description.$error.required">This field is required</p>
+        <p ng-show="vm.submitted && frmIngr.description.$error.maxlength">Limit to less than 300 characters</p>
+    </div>
+    <div class="form-group" ng-class="{'has-error': vm.submitted && frmIngr.price.$invalid,
+             'has-success': vm.submitted && frmIngr.price.$valid}">
+        <label for="price">Price:</label>
+        <input type="number" name="price" placeholder="Price" class="form-control" ng-model="vm.ingredient.price" required />
+        <p ng-show="vm.submitted && frmIngr.price.$error.required">This field is required</p>
+        <p ng-show="vm.submitted && frmEditIngr.price.$error.number">Must input a number</p>
+    </div>
+    <div class="form-group" ng-class="{'has-error': vm.submitted && frmIngr.unitOfMeasure.$invalid,
+             'has-success': vm.submitted && frmIngr.unitOfMeasure.$valid}">
+        <label for="unitOfMeasure">Unit of Measure:</label>
+        <input type="text" name="unitOfMeasure" placeholder="Unit of Measure" class="form-control" ng-model="vm.ingredient.unitOfMeasure" required />
+        <p ng-show="vm.submitted && frmIngr.unitOfMeasure.$error.required">This field is required</p>
+    </div>
+    <div class="form-group">
+        <input type="hidden" name="categoryId" ng-model="vm.ingredient.categoryId" required />
+        <label for="categoryId">Category:</label>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" ng-class="{'dropdown-error': vm.submitted && frmIngr.categoryId.$invalid,
+             'dropdown-success': vm.submitted && frmIngr.categoryId.$valid}">
+                {{vm.selectedCategory}} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation" ng-repeat="cat in vm.categories">
+                    <a role="menuitem" ng-click="vm.setCategory(cat)">{{cat.Name}}</a>
+                </li>
+            </ul>
+        </div>
+        <p ng-show="vm.submitted && frmIngr.categoryId.$error.required">You must select an item from the list</p>
+    </div>
+    <br />
+    <!--<button class="btn btn-default" type="button" ng-click="navigationLinks.goToMarket()">Cancel</button>-->
+    <button class="btn btn-default" type="button" ng-click="vm.goMarket()">Cancel</button>
+    <button class="btn btn-primary" type="submit">Save</button>
+</form>
